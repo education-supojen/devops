@@ -1,5 +1,5 @@
 apiVersion: argoproj.io/v1alpha1
-kind: application
+kind: Application
 
 metadata:
   name: auth-application
@@ -13,7 +13,7 @@ spec:
   source: 
     repoURL: https://github.com/education-supojen/devops.git
     targetRevision: develop
-    path: Auth
+    path: App/Auth
   
   # description - 
   #     The destination of the application

@@ -1,0 +1,5 @@
+bases:
+  - ../../base
+patches:
+  - env.yaml
+  - replica_count.yaml

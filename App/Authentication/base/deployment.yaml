@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+
+# description: 
+#   metadata is about the identity of the resource
+metadata:
+  name: auth
+  labels:
+    app: auth-deployment
+
+# description: 
+#   spec contains the detail about the resource
+#   
+#   replicas - specifyed the desired pod quantity
+#   selector - select the template for creating the pod
+#   template - defined the pod's template
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: auth-pods
+  # description: 
+  #   About how to create a pod
+  #   .metadata.labels - make a labels for deployment to select
+  #   spec             - defined the configuration of the conatiner
+  template:
+    metadata:
+      labels:
+        app: auth-pods
+    spec:
+      imagePullSecrets:
+      - name: docker-registry
+      containers:
+      - name: authentication-app
+        image: supojen/ecommerce-auth:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "200m"
+
+  

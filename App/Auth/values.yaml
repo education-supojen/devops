@@ -1,0 +1,5 @@
+namespace: "backend"
+
+deployment: 
+  image: "supojen/ecommerce-auth"
+  env: "Develpoment"

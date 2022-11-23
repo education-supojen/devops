@@ -1,0 +1,1 @@
+kubectl apply -k (directory of the kustomize.yaml)

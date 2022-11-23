@@ -1,0 +1,21 @@
+apiVersion: v1
+entries:
+  Auth:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-11-23T22:20:02.48081+08:00"
+    description: About the auth service
+    digest: 998ae6e580b3855114f3b57d5bca3b0eb686ac6b59ebf0785c14cd43dab0be60
+    home: https://github.com/education-supojen/auth
+    icon: https://photo.joypo.xyz/Product/91926252693254144/447107.jpeg
+    keywords:
+    - Authentication Service
+    maintainers:
+    - email: brian71742@gmail.com
+      name: su po jen
+    name: Auth
+    type: application
+    urls:
+    - Auth-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-11-23T22:20:02.480401+08:00"

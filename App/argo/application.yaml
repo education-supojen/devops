@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: application
+
+metadata:
+  name: auth-application
+  namespace: argocd
+
+spec:
+  project: default
+
+  # description - 
+  #     The source of the application
+  source: 
+    repoURL: https://github.com/education-supojen/devops.git
+    targetRevision: develop
+    path: Auth
+  
+  # description - 
+  #     The destination of the application
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: backend
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    # description - 
+    #     Enable automatic sync (track and sync)
+    automated:
+      # description - 
+      #     Enable automatic self-healing 
+      #     By default, changes made to the live cluster will not trigger automated sync
+      selfHeal: true
+      # description - 
+      #     Enable automatic pruning 
+      #     By default, automatic sync will not delete resources
+      prune: true
+
